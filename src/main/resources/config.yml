@@ -1,0 +1,84 @@
+# ITEM EXAMPLE
+# 0:
+#   material: STONE - The material is the type of item, see the following link for all valid material IDs:
+#                     (https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html)
+#   name: "&5Super Stone" - The name can be anything you want and supports minecraft color codes
+#   tier: COMMON - The tier of airdrop that the item will spawn in (Must be either COMMON, RARE, or POGGERS)
+#   enchantments: - Each new enchantment is on a new line. Enchantment levels can be any number including
+#                   those above vanilla enchantment levels. See the following link for all valid enchantment IDs:
+#                   (https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html)
+#     FIRE_ASPECT: 2
+#     MENDING: 1
+#     DAMAGE_ALL: 10
+#   chance: 0.25 - The chance is in decimal format and is any number from 0 to 1 (Ex. 0.25 is 25%).
+#   minAmount: 1 - The minimum amount of this item that will be stacked into one slot
+#   maxAmount: 64 - The maximum amount of this item that will be stacked into one slot
+
+
+
+loot: # Each new item adds 1 to this number (Ex. 1, 2, 3 , 4, 5)
+  0:
+    material: FIRST STONE
+    name: "&6Common Stone"
+    tier: COMMON
+    enchantments:
+      FIRE_ASPECT: 2
+      MENDING: 1
+      SHARPNESS: 10
+    chance: 1.0
+    minAmount: 1
+    maxAmount: 64
+  1:
+    material: STONE
+    name: "&1Rare Stone"
+    tier: RARE
+    enchantments:
+      FIRE_ASPECT: 2
+      MENDING: 1
+      SHARPNESS: 10
+    chance: 1.0
+    minAmount: 1
+    maxAmount: 64
+  2:
+    material: STONE
+    name: "&dPOGGERS Stone"
+    tier: POGGERS
+    enchantments:
+      FIRE_ASPECT: 2
+      MENDING: 1
+      SHARPNESS: 10
+    chance: 1.0
+    minAmount: 1
+    maxAmount: 64
+
+enabled-world: world # This is the world that airdrops will spawn in, there can only be 1
+
+airdrop-area: # This is the area in which airdrops will spawn randomly
+  minimum-x: -18
+  minimum-z: 151
+  maximum-x: -14
+  maximum-z: 161
+
+highest-landing-block: 10 # This is the y level of the highest block an airdrop can land on. So the airdrop will actually be 1 block higher
+
+required-online-players: 2 # This is the minimum number of players required to be online for an airdrop to spawn
+
+airdrop-delays: # This is the time in minutes between when another airdrop can spawn from the last
+  minimum-delay: 60
+  maximum-delay: 120
+
+despawn-time: 60 # The time in seconds that an airdrop will take to despawn after being opened
+
+tier-weights: # The weight of each airdrop tier being dropped, see below for an in-depth explanation of the weighing system.
+  common: 100
+  rare: 30
+  poggers: 15
+
+# Weighing System:
+# The weighing system adds all the weights (Default 100, 30, and 15) and selects from that. The higher the number of higher the chance.
+# If you wish to make this super easy to understand, make sure all weights add up to 100 and that will make it so that each weight has its percent chance
+# of being selected.
+# If you however wish to be more accurate with your weights you may increase or decrease these levels and here is how it works:
+# Say we have our default weights of 100, 30, and 15, which collectively add up to 145. Then the plugin will assign each weight its own range.
+# For example, common will be from 1 to 100, rare will be from 101 to 130, and poggers will be from 131 to 140. Then the plugin will select a random number in that range
+# and if it lands in that tier range, that tier of airdrops will spawn.

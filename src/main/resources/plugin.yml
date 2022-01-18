@@ -1,0 +1,11 @@
+name: AirDrops
+version: '${project.version}'
+main: org.infamousmc.airdrops.Main
+api-version: 1.17
+authors: [ devJordan ]
+description: Private plguin
+softdepend: [HolographicDisplays]
+
+commands:
+  Airdrop:
+  Test:
